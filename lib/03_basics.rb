@@ -29,17 +29,37 @@ end
 
 
 # -- REVERSE & noLTA ------------------------------------
-strg = gets.chomp.to_s
 
-def reverse_upcase_noLTA (strg)
+st = gets.chomp.to_s
+def reverse_upcase_noLTA(st)
+    st = st.reverse!
+    st = st.delete"ltaLTA"
+    st = st.upcase
+return st
 end
-return strg.reverse.upcase.delete! '(L,T,A)'
 
 
 
 
 # -- Array_42 ------------------------------------
 
-#def Array_42 ( array)
+array = []
+x = gets.chomp
+
+def array_42(array) 
+array.include?(42)
+end
 
 
+
+
+
+# -- MAGIC_ARRAY ------------------------------------
+
+array = []
+x = gets.chomp
+
+def magic_array(array)
+array = array.flatten.sort.collect{|f| f * 2}.delete_if{|f| f % 3 == 0}.uniq
+    return array
+end
